@@ -13,6 +13,11 @@
 		25A36D151467CAE400EAC40E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 25A36D131467CAE400EAC40E /* InfoPlist.strings */; };
 		25A36D171467CAE400EAC40E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D161467CAE400EAC40E /* main.m */; };
 		25A36D1B1467CAE400EAC40E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D1A1467CAE400EAC40E /* AppDelegate.m */; };
+		25A36D281467CCE200EAC40E /* MainTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D221467CCE200EAC40E /* MainTableViewCell.m */; };
+		25A36D291467CCE200EAC40E /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D241467CCE200EAC40E /* MainTableViewController.m */; };
+		25A36D2A1467CCE200EAC40E /* MainTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25A36D251467CCE200EAC40E /* MainTableViewController.xib */; };
+		25A36D2B1467CCE200EAC40E /* SubTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D271467CCE200EAC40E /* SubTableView.m */; };
+		25A36D2E1467CE6600EAC40E /* SubTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 25A36D2D1467CE6600EAC40E /* SubTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		25A36D181467CAE400EAC40E /* TimeTable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TimeTable-Prefix.pch"; sourceTree = "<group>"; };
 		25A36D191467CAE400EAC40E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		25A36D1A1467CAE400EAC40E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		25A36D211467CCE200EAC40E /* MainTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewCell.h; sourceTree = "<group>"; };
+		25A36D221467CCE200EAC40E /* MainTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewCell.m; sourceTree = "<group>"; };
+		25A36D231467CCE200EAC40E /* MainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableViewController.h; sourceTree = "<group>"; };
+		25A36D241467CCE200EAC40E /* MainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableViewController.m; sourceTree = "<group>"; };
+		25A36D251467CCE200EAC40E /* MainTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableViewController.xib; sourceTree = "<group>"; };
+		25A36D261467CCE200EAC40E /* SubTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTableView.h; sourceTree = "<group>"; };
+		25A36D271467CCE200EAC40E /* SubTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTableView.m; sourceTree = "<group>"; };
+		25A36D2C1467CE6600EAC40E /* SubTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubTableViewCell.h; sourceTree = "<group>"; };
+		25A36D2D1467CE6600EAC40E /* SubTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +86,18 @@
 		25A36D101467CAE400EAC40E /* TimeTable */ = {
 			isa = PBXGroup;
 			children = (
+				25A36D111467CAE400EAC40E /* Supporting Files */,
+				25A36D211467CCE200EAC40E /* MainTableViewCell.h */,
+				25A36D221467CCE200EAC40E /* MainTableViewCell.m */,
+				25A36D231467CCE200EAC40E /* MainTableViewController.h */,
+				25A36D241467CCE200EAC40E /* MainTableViewController.m */,
+				25A36D251467CCE200EAC40E /* MainTableViewController.xib */,
+				25A36D261467CCE200EAC40E /* SubTableView.h */,
+				25A36D271467CCE200EAC40E /* SubTableView.m */,
 				25A36D191467CAE400EAC40E /* AppDelegate.h */,
 				25A36D1A1467CAE400EAC40E /* AppDelegate.m */,
-				25A36D111467CAE400EAC40E /* Supporting Files */,
+				25A36D2C1467CE6600EAC40E /* SubTableViewCell.h */,
+				25A36D2D1467CE6600EAC40E /* SubTableViewCell.m */,
 			);
 			path = TimeTable;
 			sourceTree = "<group>";
@@ -141,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				25A36D151467CAE400EAC40E /* InfoPlist.strings in Resources */,
+				25A36D2A1467CCE200EAC40E /* MainTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,6 +177,10 @@
 			files = (
 				25A36D171467CAE400EAC40E /* main.m in Sources */,
 				25A36D1B1467CAE400EAC40E /* AppDelegate.m in Sources */,
+				25A36D281467CCE200EAC40E /* MainTableViewCell.m in Sources */,
+				25A36D291467CCE200EAC40E /* MainTableViewController.m in Sources */,
+				25A36D2B1467CCE200EAC40E /* SubTableView.m in Sources */,
+				25A36D2E1467CE6600EAC40E /* SubTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
