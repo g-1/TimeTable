@@ -10,9 +10,12 @@
 
 #import "SubTableViewCell.h"
 
+static int serial = 0;
+
 @implementation SubTableView
 
 @synthesize table;
+@synthesize no;
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -23,6 +26,8 @@
     self.table.delegate = self;
     self.table.dataSource = self;
     [self addSubview:self.table];
+    
+    self.no = serial++;
   }
   return self;
 }
@@ -32,7 +37,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-  return 10;//仮
+  return 30;//仮
 }
 
 
@@ -52,9 +57,21 @@
     cell.contentView.backgroundColor = [UIColor grayColor];
   }
   
+  //仮コンテンツ
+  CGRect rect = CGRectMake(0, 0, 320/3,self.frame.size.height / 10);
+  UILabel *label_A = [[[UILabel alloc] initWithFrame:rect] autorelease];
+  label_A.text = [NSString stringWithFormat:@"A:%d", self.no];
+  label_A.textAlignment = UITextAlignmentLeft;
+  label_A.backgroundColor = [UIColor clearColor];
+  [cell.contentView addSubview:label_A];
+  
+  UILabel *label_B = [[[UILabel alloc] initWithFrame:rect] autorelease];
+  label_B.text = @"B";
+  label_B.textAlignment = UITextAlignmentRight;
+  label_B.backgroundColor = [UIColor clearColor];
+  [cell.contentView addSubview:label_B];
   
   return cell;
-
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

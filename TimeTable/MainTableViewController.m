@@ -43,10 +43,12 @@
   // Uncomment the following line to preserve selection between presentations.
   // self.clearsSelectionOnViewWillAppear = NO;
   
+  self.tableView.transform = CGAffineTransformRotate(self.tableView.transform, -M_PI / 2.0);
+  
   // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
   // self.navigationItem.rightBarButtonItem = self.editButtonItem;
   self.subTableViews = [NSMutableArray arrayWithCapacity:32];
-  CGRect rect = CGRectMake(0, 0, self.tableView.frame.size.width, COMMON_HEIGHT);
+  CGRect rect = CGRectMake(0, 0, 320/3, 460);
   for(int i = 0; i < 5; ++i){
     SubTableView *subTableView = [[SubTableView alloc] initWithFrame:rect];
     [self.subTableViews addObject:subTableView];
@@ -102,12 +104,7 @@
 {
   //#warning Incomplete method implementation.
   // Return the number of rows in the section.
-  if( section == 0 ){
-    return 10;//仮
-  }
-  else{
-    return 0;
-  }
+  return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,16 +114,23 @@
   MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    
+    [cell normalizeContentView];
   }
   
   // Configure the cell...
-  cell.index = indexPath.row;
+  //cell.index = indexPath.row;
   
-  if( cell.index % 2){
-    int no = cell.index / 2;
-    SubTableView *subTableView = (SubTableView *)[self.subTableViews objectAtIndex:no];
-    [cell.contentView addSubview:subTableView];
+  if(indexPath.section == 0){
+    if( indexPath.row < [self.subTableViews count] ){
+      
+      SubTableView *subTableView = (SubTableView *)[self.subTableViews objectAtIndex:indexPath.row];
+      //[cell.contentView addSubview:subTableView];
+      [cell.normalView addSubview:subTableView];
+      cell.normalView.backgroundColor = [UIColor brownColor];
+    }
   }
+  
   
   return cell;
 }
@@ -186,7 +190,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
   //一律
-  return COMMON_HEIGHT;
+  return 320/3;
 }
 
 @end

@@ -10,6 +10,9 @@
 
 @interface MainTableViewCell : UITableViewCell
 
+- (void)normalizeContentView;
+
 @property(nonatomic, assign) int index;
+@property(nonatomic, retain) UIView *normalView;
 
 @end

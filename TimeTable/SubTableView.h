@@ -11,6 +11,7 @@
 @interface SubTableView : UIView <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, retain) UITableView *table;
+@property(nonatomic, assign) int no;
 
 @end
 
