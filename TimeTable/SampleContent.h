@@ -7,11 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MatrixContent.h"
 
-@interface SampleContent : NSObject< MatrixContent >
+@interface SampleContent : NSObject
 
-- (id)initWithString:(NSString *)str;
 
 @property(nonatomic, retain) NSString *strArticle;
 

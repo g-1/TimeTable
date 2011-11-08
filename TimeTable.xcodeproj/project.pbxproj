@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		257309A814693DBB00AD47EA /* MatrixContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 257309A514693DBB00AD47EA /* MatrixContentView.m */; };
+		257309A914693DBB00AD47EA /* SampleContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 257309A714693DBB00AD47EA /* SampleContent.m */; };
 		25A36D0B1467CAE400EAC40E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A36D0A1467CAE400EAC40E /* UIKit.framework */; };
 		25A36D0D1467CAE400EAC40E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A36D0C1467CAE400EAC40E /* Foundation.framework */; };
 		25A36D0F1467CAE400EAC40E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25A36D0E1467CAE400EAC40E /* CoreGraphics.framework */; };
@@ -21,6 +23,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		257309A314693DBB00AD47EA /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		257309A414693DBB00AD47EA /* MatrixContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MatrixContentView.h; sourceTree = "<group>"; };
+		257309A514693DBB00AD47EA /* MatrixContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MatrixContentView.m; sourceTree = "<group>"; };
+		257309A614693DBB00AD47EA /* SampleContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleContent.h; sourceTree = "<group>"; };
+		257309A714693DBB00AD47EA /* SampleContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleContent.m; sourceTree = "<group>"; };
 		25A36D061467CAE400EAC40E /* TimeTable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeTable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25A36D0A1467CAE400EAC40E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		25A36D0C1467CAE400EAC40E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +94,11 @@
 			isa = PBXGroup;
 			children = (
 				25A36D111467CAE400EAC40E /* Supporting Files */,
+				257309A314693DBB00AD47EA /* Common.h */,
+				257309A414693DBB00AD47EA /* MatrixContentView.h */,
+				257309A514693DBB00AD47EA /* MatrixContentView.m */,
+				257309A614693DBB00AD47EA /* SampleContent.h */,
+				257309A714693DBB00AD47EA /* SampleContent.m */,
 				25A36D211467CCE200EAC40E /* MainTableViewCell.h */,
 				25A36D221467CCE200EAC40E /* MainTableViewCell.m */,
 				25A36D231467CCE200EAC40E /* MainTableViewController.h */,
@@ -181,6 +193,8 @@
 				25A36D291467CCE200EAC40E /* MainTableViewController.m in Sources */,
 				25A36D2B1467CCE200EAC40E /* SubTableView.m in Sources */,
 				25A36D2E1467CE6600EAC40E /* SubTableViewCell.m in Sources */,
+				257309A814693DBB00AD47EA /* MatrixContentView.m in Sources */,
+				257309A914693DBB00AD47EA /* SampleContent.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +296,7 @@
 				25A36D201467CAE400EAC40E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

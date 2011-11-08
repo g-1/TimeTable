@@ -8,7 +8,11 @@
 
 #import "SubTableViewCell.h"
 
+#import "MatrixContentView.h"
+
 @implementation SubTableViewCell
+
+@synthesize matrixContentView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -16,7 +20,8 @@
   if (self) {
     // Initialization code
     //仮コンテンツ
-    CGRect rect = CGRectMake(0, 0, 320/3,46);
+    /*
+    CGRect rect = CGRectMake(0, 0, 10,10);
     UILabel *label_A = [[[UILabel alloc] initWithFrame:rect] autorelease];
     label_A.text = [NSString stringWithFormat:@"A"];
     label_A.textAlignment = UITextAlignmentLeft;
@@ -28,9 +33,19 @@
     label_B.textAlignment = UITextAlignmentRight;
     label_B.backgroundColor = [UIColor clearColor];
     [self.contentView addSubview:label_B];
+     */
+    self.matrixContentView = [[MatrixContentView alloc] initWithFrame:self.contentView.frame withCell:self];
+    [self.contentView addSubview:self.matrixContentView];
 
   }
   return self;
+}
+
+- (void)dealloc{
+  
+  self.matrixContentView = nil;
+  //
+  [super dealloc];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

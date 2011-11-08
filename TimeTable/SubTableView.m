@@ -10,6 +10,7 @@
 #import "SubTableView.h"
 
 #import "SubTableViewCell.h"
+#import "MatrixContentView.h"
 
 static int serial = 0;
 
@@ -58,28 +59,26 @@ static int serial = 0;
     cell.contentView.backgroundColor = [UIColor grayColor];
   }
   
-  //仮コンテンツ
-  /*
-  CGRect rect = CGRectMake(0, 0, 320/3,self.frame.size.height / 10);
-  UILabel *label_A = [[[UILabel alloc] initWithFrame:rect] autorelease];
-  label_A.text = [NSString stringWithFormat:@"A:%d", self.no];
-  label_A.textAlignment = UITextAlignmentLeft;
-  label_A.backgroundColor = [UIColor clearColor];
-  [cell.contentView addSubview:label_A];
-  
-  UILabel *label_B = [[[UILabel alloc] initWithFrame:rect] autorelease];
-  label_B.text = @"B";
-  label_B.textAlignment = UITextAlignmentRight;
-  label_B.backgroundColor = [UIColor clearColor];
-  [cell.contentView addSubview:label_B];
-   */
-
   return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
   //一律
   return self.frame.size.height / 10;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+  //cellのコンテントビューの調整はここで可能
+  float x = cell.contentView.frame.origin.x;
+  float y = cell.contentView.frame.origin.y;
+  float width = tableView.frame.size.width;
+  float height = cell.frame.size.height;
+  
+  cell.contentView.frame = CGRectMake(x, y, width, height);
+  
+  //test
+  ((SubTableViewCell *)cell).matrixContentView.label_A.frame = cell.contentView.frame;
+  ((SubTableViewCell *)cell).matrixContentView.label_B.frame = cell.contentView.frame;
 }
 
 

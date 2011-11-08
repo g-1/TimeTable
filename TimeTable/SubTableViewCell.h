@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class MatrixContentView;
+
 @interface SubTableViewCell : UITableViewCell
 
+@property(nonatomic, retain) MatrixContentView *matrixContentView;
 @end

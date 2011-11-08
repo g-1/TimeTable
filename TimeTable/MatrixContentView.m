@@ -27,9 +27,8 @@
     // Initialization code
     //仮コンテンツ
     //CGRect rect = CGRectMake(0, 10, 320/3,self.frame.size.height / 10);
-    /*
     self.label_A = [[[UILabel alloc] initWithFrame:frame] autorelease];
-    self.label_A.text = [NSString stringWithFormat:@"A:%@", cell.aMatrixContent.strArticle];
+    self.label_A.text = [NSString stringWithFormat:@"A"];
     
     self.label_A.textAlignment = UITextAlignmentLeft;
     self.label_A.backgroundColor = [UIColor clearColor];
@@ -40,7 +39,6 @@
     self.label_B.textAlignment = UITextAlignmentRight;
     self.label_B.backgroundColor = [UIColor clearColor];
     [self addSubview:self.label_B];
-     */
     
     NSLog(@"w,h=%f ,%f",frame.size.width, frame.size.height);
   }
@@ -54,9 +52,8 @@
   [super dealloc];
 }
 
+#if 0
 - (void)drawRect:(CGRect)rect{
-  
-  NSLog(@"%@",cell.aMatrixContent.strArticle);
   
   /*
   self.label_A.frame = rect;
@@ -67,6 +64,7 @@
   
   //[super drawRect:rect];
 }
+#endif
 
 
 
