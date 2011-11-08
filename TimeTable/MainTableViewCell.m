@@ -40,6 +40,9 @@
   //実験
   //self.contentView.transform = CGAffineTransformRotate(self.contentView.transform, M_PI / 2.0);
   
+  //逆縁切り
+  [self.normalView removeFromSuperview];
+  
   CGRect rect = CGRectMake(0, 0, 320 / 3, 460); //仮
   self.normalView = [[[UIView alloc] initWithFrame:rect] autorelease];
   //self.normalView.backgroundColor = [UIColor brownColor];

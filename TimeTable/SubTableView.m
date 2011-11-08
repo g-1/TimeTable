@@ -69,16 +69,17 @@ static int serial = 0;
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
   //cellのコンテントビューの調整はここで可能
+  //2重テーブルのキモ
   float x = cell.contentView.frame.origin.x;
   float y = cell.contentView.frame.origin.y;
   float width = tableView.frame.size.width;
   float height = cell.frame.size.height;
-  
-  cell.contentView.frame = CGRectMake(x, y, width, height);
+
+  CGRect rect = CGRectMake(x, y, width, height);
   
   //test
-  ((SubTableViewCell *)cell).matrixContentView.label_A.frame = cell.contentView.frame;
-  ((SubTableViewCell *)cell).matrixContentView.label_B.frame = cell.contentView.frame;
+  [((SubTableViewCell *)cell).matrixContentView updateFrame:rect];
+
 }
 
 

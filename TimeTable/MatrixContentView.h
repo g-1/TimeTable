@@ -17,6 +17,8 @@
 
 - (id)initWithFrame:(CGRect)frame withCell:(SubTableViewCell* )aCell;
 
+- (void)updateFrame:(CGRect)frame;
+
 //仮コンテンツ
 @property(nonatomic, retain) UILabel *label_A;
 @property(nonatomic, retain) UILabel *label_B;

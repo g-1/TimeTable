@@ -66,6 +66,13 @@
 }
 #endif
 
+- (void)updateFrame:(CGRect)frame{
+  //self.frame = frame;
+  
+  self.label_A.frame = frame;
+  self.label_B.frame = frame;
+}
+
 
 
 @end
