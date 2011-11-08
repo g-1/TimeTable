@@ -49,6 +49,7 @@ static int serial = 0;
   SubTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[[SubTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell.contentView.frame = CGRectMake(0, 0, self.table.frame.size.width, 0);//重要
   }
   
   // Configure the cell...
@@ -70,16 +71,11 @@ static int serial = 0;
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
   //cellのコンテントビューの調整はここで可能
   //2重テーブルのキモ
-  float x = cell.contentView.frame.origin.x;
-  float y = cell.contentView.frame.origin.y;
-  float width = tableView.frame.size.width;
-  float height = cell.frame.size.height;
+  //独自のコンテントビューを作成した場合はこのタイミングでframeをアップデートする
+  //既にcellの幅を調整済みなら上記は不要
+  CGRect rect = cell.contentView.frame;
 
-  CGRect rect = CGRectMake(x, y, width, height);
-  
-  //test
   [((SubTableViewCell *)cell).matrixContentView updateFrame:rect];
-
 }
 
 
