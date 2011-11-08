@@ -6,6 +6,7 @@
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
 
+#include "Common.h"
 #import "SubTableView.h"
 
 #import "SubTableViewCell.h"
@@ -70,7 +71,7 @@ static int serial = 0;
   label_B.textAlignment = UITextAlignmentRight;
   label_B.backgroundColor = [UIColor clearColor];
   [cell.contentView addSubview:label_B];
-  
+
   return cell;
 }
 
@@ -88,5 +89,11 @@ static int serial = 0;
  // Drawing code
  }
  */
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+  //移動量をポスト
+  [[NSNotificationCenter defaultCenter] postNotificationName:SYNC_CONTENT_OFFSET object:scrollView];
+}
 
 @end

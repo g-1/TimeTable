@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SubTableView : UIView <UITableViewDelegate, UITableViewDataSource>
+@interface SubTableView : UIView <UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
 @property(nonatomic, retain) UITableView *table;
 @property(nonatomic, assign) int no;

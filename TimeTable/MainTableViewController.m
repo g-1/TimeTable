@@ -5,6 +5,7 @@
 //  Created by Naka Takahiro on 11/11/04.
 //  Copyright (c) 2011 __MyCompanyName__. All rights reserved.
 //
+#include "Common.h"
 
 #import "MainTableViewController.h"
 
@@ -53,6 +54,9 @@
     SubTableView *subTableView = [[SubTableView alloc] initWithFrame:rect];
     [self.subTableViews addObject:subTableView];
   }
+  
+  //テーブル同期のための通知
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(syncContentOffset:) name:SYNC_CONTENT_OFFSET object:nil];
 }
 
 - (void)viewDidUnload
@@ -63,6 +67,8 @@
   
   [self.subTableViews removeAllObjects];
   self.subTableViews = nil;
+  
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -114,12 +120,12 @@
   MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
     cell = [[[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    
-    [cell normalizeContentView];
   }
   
   // Configure the cell...
   //cell.index = indexPath.row;
+  
+  [cell normalizeContentView];
   
   if(indexPath.section == 0){
     if( indexPath.row < [self.subTableViews count] ){
@@ -130,6 +136,8 @@
       cell.normalView.backgroundColor = [UIColor brownColor];
     }
   }
+
+  
   
   
   return cell;
@@ -191,6 +199,17 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
   //一律
   return 320/3;
+}
+
+#pragma mark - selector
+- (void)syncContentOffset:(NSNotification* )notification{
+  NSLog(@"syncContentOffset");
+  UIScrollView *originalView = (UIScrollView *)notification.object;
+  
+  //任意のサブビューのcontentOffsetを同期,今回は全部
+  for(SubTableView *s in self.subTableViews ){
+    s.table.contentOffset = originalView.contentOffset;
+  }
 }
 
 @end

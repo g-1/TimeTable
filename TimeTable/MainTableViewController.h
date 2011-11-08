@@ -10,5 +10,7 @@
 
 @interface MainTableViewController : UITableViewController
 
+- (void)syncContentOffset:(NSNotification *)notification;
+
 @property(nonatomic, retain) NSMutableArray *subTableViews;
 @end
