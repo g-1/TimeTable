@@ -59,6 +59,7 @@ static int serial = 0;
   }
   
   //仮コンテンツ
+  /*
   CGRect rect = CGRectMake(0, 0, 320/3,self.frame.size.height / 10);
   UILabel *label_A = [[[UILabel alloc] initWithFrame:rect] autorelease];
   label_A.text = [NSString stringWithFormat:@"A:%d", self.no];
@@ -71,6 +72,7 @@ static int serial = 0;
   label_B.textAlignment = UITextAlignmentRight;
   label_B.backgroundColor = [UIColor clearColor];
   [cell.contentView addSubview:label_B];
+   */
 
   return cell;
 }
